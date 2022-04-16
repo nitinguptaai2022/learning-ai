@@ -1,0 +1,124 @@
+from tkinter import *
+def finish():
+    root.destroy()
+
+def show():
+    fname = e1.get()
+    lname = e2.get()
+    fullname = fname +" "+lname
+    l3.config(text = fullname)
+
+root = Tk()
+l1=Label(root, text="First Name")`
+l2=Label(root, text="Last Name")
+
+l3=Label(root,width=20,anchor=W,font="Arial 10 bold")
+e1 = Entry(root)
+e2 = Entry(root)
+b1=Button(root, text='Show', command=show)
+b2=Button(root, text='Quit', command=finish)
+l1.grid(row=0,column=0)
+l2.grid(row=1,column=0)
+e1.grid(row=0, column=1)
+e2.grid(row=1, column=1)
+l3.grid(row=2,columnspan=2,sticky=W)
+b1.grid(row=3, column=0, sticky=W, pady=4)
+b2.grid(row=3, column=1, sticky=W, pady=4)
+root.mainloop()
+
+
+
+from tkinter import *
+
+def changecolor(e):
+    root.config(bg="red")
+
+root = Tk()
+root.geometry('200x200')
+b1=Button(root,text="Click Me"
+b1.bind("<Button-1>",changecolor)
+b1.pack()
+root.mainloop()
+
+
+
+
+from tkinter import *
+oldcolor=""
+
+def enterkey(e):
+    root.config(bg="red")
+
+def escapekey(e):
+    root.config(bg="SystemButtonFace")
+
+root = Tk()
+root.geometry('200x200')
+b1=Button(root,text="Click Me")
+root.bind("<Return>",enterkey)g
+root.bind("<Escape>",escapekey)
+oldcolor=root["bg"]
+print(oldcolor)
+b1.pack()
+root.mainloop()
+
+
+
+from tkinter import *
+def changecolor(e):
+    ch=e.char
+    if ch=="r":
+       root.config(bg="red")
+    elif ch=="b":
+        root.config(bg="blue")
+    elif ch=="g":
+        root.config(bg="green")
+
+root = Tk()
+root.geometry('200x200')
+root.bind("<Key>",changecolor)
+root.mainloop()
+
+
+
+
+from tkinter import *
+def divide():
+    a = float(e1.get())
+    b = float(e2.get())
+    divide = a/b
+    e3.insert(0,divide)
+def clear():
+    e1.delete(0, END)
+    e2.delete(0, END)
+    e3.delete(0, END)
+def finish():
+    root.destroy()
+root = Tk()
+root.geometry('400x200+100+200')
+l1=Label(root, text="Number Division Program",font="Arial 18 bold")
+l2=Label(root, text="First No:")
+l3=Label(root, text="Second No:")
+l4=Label(root,text="Result:")
+e1=Entry(root)
+e2=Entry(root)
+e3=Entry(root)
+b1=Button(root,text="Divide",command=divide)
+b2=Button(root,text="Clear",command=clear)
+b3=Button(root,text="Quit",command=finish)
+l1.grid(row=0,column=0,columnspan=4)
+l2.grid(row=1,column=0,sticky=E)
+e1.grid(row=1,column=1)
+l3.grid(row=2,column=0,sticky=E)
+e2.grid(row=2,column=1)
+l4.grid(row=3,column=0,sticky=E)
+e3.grid(row=3,column=1)
+b1.grid(row=4,column=0,pady=5,padx=5,sticky=E+W)
+b2.grid(row=4,column=1,pady=5,padx=5,sticky=E+W)
+b3.grid(row=4,column=2,pady=5,padx=5,sticky=E+W)
+root.mainloop()
+
+
+
+
+
